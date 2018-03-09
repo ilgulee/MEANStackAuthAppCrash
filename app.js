@@ -16,7 +16,7 @@ mongoose.connection.on('error',(err)=>{
 });
 const app=express();
 
-const users=require('./routes/users');
+const students=require('./routes/students');
 
 const port=3000;
 
@@ -31,7 +31,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-app.use('/users',users); //'localhost:3000/users' + /xxx , users is router in users.js file
+app.use('/students',students); //'localhost:3000/users' + /xxx , users is router in users.js file
 
 app.get('/', (req, res) => {
     res.send('start point')
